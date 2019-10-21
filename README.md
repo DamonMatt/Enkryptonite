@@ -1,5 +1,5 @@
 # Enkryptonite
-DES &amp; AES Encryptor
+DES ECB Encryptor
 
 ### Prerequisites
 - Python3
