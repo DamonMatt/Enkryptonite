@@ -129,7 +129,7 @@ class DES:
     def VerifyKey(self, key):
         try:
             hexkey = key.replace(" ", "")
-            hexkey = hex(int(hexkey, 16))
+            hexkey = hex(int(hexkey, 16)).zfill(18)
             # print(hexkey)
             if len(hexkey) == 18:
                 return True
