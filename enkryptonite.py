@@ -1,4 +1,5 @@
 from des import DES
+from porta import PORTA
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -11,8 +12,10 @@ parser.add_argument("-d", "--decrypt", action="store_true", help="Encrypt/Decryp
 
 args = parser.parse_args()
 
-if args.method == "des":
-    encryptor = DES(args.key)
+methods = { "des": DES, "porta": PORTA }
+
+if args.method in methods.keys():
+    encryptor = methods[args.method](args.key)
     if encryptor.key:
         if args.decrypt:
             if args.cipher:
